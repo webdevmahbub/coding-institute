@@ -80,109 +80,219 @@
       </section>
 
       <!-- courses -->
-      <div class="container py-5">
-        <h2 class="text-center mb-4">Our Courses</h2>
-        <div class="row g-4">
-          <!-- Course 1 -->
-          <div class="col-md-4">
-            <div class="card shadow h-100">
-              <img
-                src="images/web.jpeg"
-                class="card-img-top"
-                alt="Web Development"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Web Development</h5>
-                <p class="card-text">
-                  Learn HTML, CSS, JavaScript, and frameworks to build
-                  responsive websites.
-                </p>
-                <button
-                  class="btn btn-primary"
-                  onclick="showDetails('course1')"
-                >
-                  View Details
-                </button>
+      <section>
+        <div class="container py-5">
+          <h2 class="text-center mb-4">Our Courses</h2>
+          <div class="row g-4">
+            <!-- Course 1 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img
+                  src="images/web.jpeg"
+                  class="card-img-top"
+                  alt="Web Development"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Web Development</h5>
+                  <p class="card-text">
+                    Learn HTML, CSS, JavaScript, and frameworks to build
+                    responsive websites.
+                  </p>
+                  <button
+                    class="btn btn-primary"
+                    onclick="showDetails('course1')"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img
+                  src="images/web.jpeg"
+                  class="card-img-top"
+                  alt="Digital Marketing"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Digital Marketing</h5>
+                  <p class="card-text">
+                    Master SEO, social media marketing, and email campaigns to
+                    grow businesses.
+                  </p>
+                  <button
+                    class="btn btn-primary"
+                    onclick="showDetails('course2')"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img
+                  src="images/web.jpeg"
+                  class="card-img-top"
+                  alt="Graphic Design"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Graphic Design</h5>
+                  <p class="card-text">
+                    Learn Photoshop, Illustrator, and modern design principles
+                    for branding.
+                  </p>
+                  <button
+                    class="btn btn-primary"
+                    onclick="showDetails('course3')"
+                  >
+                    View Details
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Course 2 -->
-          <div class="col-md-4">
-            <div class="card shadow h-100">
-              <img
-                src="images/web.jpeg"
-                class="card-img-top"
-                alt="Digital Marketing"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Digital Marketing</h5>
-                <p class="card-text">
-                  Master SEO, social media marketing, and email campaigns to
-                  grow businesses.
-                </p>
+        <!-- Modal for Course Details -->
+        <div
+          class="modal fade"
+          id="courseModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="courseTitle"></h5>
                 <button
-                  class="btn btn-primary"
-                  onclick="showDetails('course2')"
-                >
-                  View Details
-                </button>
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
               </div>
-            </div>
-          </div>
-
-          <!-- Course 3 -->
-          <div class="col-md-4">
-            <div class="card shadow h-100">
-              <img
-                src="images/web.jpeg"
-                class="card-img-top"
-                alt="Graphic Design"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Graphic Design</h5>
-                <p class="card-text">
-                  Learn Photoshop, Illustrator, and modern design principles for
-                  branding.
-                </p>
+              <div class="modal-body" id="courseDescription"></div>
+              <div class="modal-footer">
                 <button
-                  class="btn btn-primary"
-                  onclick="showDetails('course3')"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
                 >
-                  View Details
+                  Close
+                </button>
+                <button type="button" class="btn btn-success">
+                  Enroll Now
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Modal for Course Details -->
-      <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="courseTitle"></h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-              ></button>
+      <!-- gallery -->
+      <section>
+        <div class="container py-5">
+          <h2 class="text-center mb-4">Student Gallery</h2>
+          <div class="row g-4">
+            <!-- Gallery Item 1 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 1"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
             </div>
-            <div class="modal-body" id="courseDescription"></div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-success">Enroll Now</button>
+
+            <!-- Gallery Item 2 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 2"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 3"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 4"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 5"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="col-md-4 col-sm-6">
+              <img
+                src="images/web.jpeg"
+                class="img-fluid rounded shadow-sm"
+                alt="Student 6"
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                onclick="setImage(this)"
+              />
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- Modal for Viewing Image -->
+        <div
+          class="modal fade"
+          id="imageModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+              <div class="modal-body text-center p-0">
+                <img
+                  id="modalImage"
+                  class="img-fluid rounded"
+                  src="images/web.jpeg"
+                  alt="Student"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script
@@ -206,6 +316,13 @@
           document.getElementById("courseModal")
         );
         myModal.show();
+      }
+    </script>
+
+    <script>
+      // Set clicked image into modal
+      function setImage(img) {
+        document.getElementById("modalImage").src = img.src;
       }
     </script>
   </body>
