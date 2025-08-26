@@ -27,8 +27,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Hidden brand</a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand" href="#">CODING INSTITUTE</a>
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -60,7 +60,9 @@
         <img src="images/banner.png" class="w-100" alt="" />
       </section>
       <!-- head of institute -->
-      <section class="d-flex justify-content-around align-items-center my-5">
+      <section
+        class="d-lg-flex justify-content-around align-items-center my-5 text-center"
+      >
         <div>
           <h1>Welcome to the Coding Institute</h1>
           <p>Your journey to becoming a coding expert starts here.</p>
@@ -72,8 +74,115 @@
             src="images/headofins.png"
             alt=""
           />
+          <h4 class="mt-3">Nahid Islam</h4>
+          <p>Head of Institute</p>
         </div>
       </section>
+
+      <!-- courses -->
+      <div class="container py-5">
+        <h2 class="text-center mb-4">Our Courses</h2>
+        <div class="row g-4">
+          <!-- Course 1 -->
+          <div class="col-md-4">
+            <div class="card shadow h-100">
+              <img
+                src="images/web.jpeg"
+                class="card-img-top"
+                alt="Web Development"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Web Development</h5>
+                <p class="card-text">
+                  Learn HTML, CSS, JavaScript, and frameworks to build
+                  responsive websites.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onclick="showDetails('course1')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="col-md-4">
+            <div class="card shadow h-100">
+              <img
+                src="images/web.jpeg"
+                class="card-img-top"
+                alt="Digital Marketing"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Digital Marketing</h5>
+                <p class="card-text">
+                  Master SEO, social media marketing, and email campaigns to
+                  grow businesses.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onclick="showDetails('course2')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="col-md-4">
+            <div class="card shadow h-100">
+              <img
+                src="images/web.jpeg"
+                class="card-img-top"
+                alt="Graphic Design"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Graphic Design</h5>
+                <p class="card-text">
+                  Learn Photoshop, Illustrator, and modern design principles for
+                  branding.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onclick="showDetails('course3')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Course Details -->
+      <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="courseTitle"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" id="courseDescription"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-success">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script
@@ -81,5 +190,23 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!-- Course Data JS -->
+    <script src="api/courses.js"></script>
+
+    <script>
+      // Function to show course details in modal
+      function showDetails(courseKey) {
+        document.getElementById("courseTitle").innerHTML =
+          courseData[courseKey].title;
+        document.getElementById("courseDescription").innerHTML =
+          courseData[courseKey].description;
+
+        // Show modal
+        let myModal = new bootstrap.Modal(
+          document.getElementById("courseModal")
+        );
+        myModal.show();
+      }
+    </script>
   </body>
 </html>
