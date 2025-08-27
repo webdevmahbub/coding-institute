@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- navabr -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -33,10 +33,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">CODING INSTITUTE</a>
+          <a class="navbar-brand" href="/">CODING INSTITUTE</a>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#courses">Courses</a>
@@ -51,17 +51,10 @@
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+
+          <button class="btn btn-outline-success" type="submit">
+            Register
+          </button>
         </div>
       </div>
     </nav>
@@ -90,6 +83,16 @@
           <p>Head of Institute</p>
         </div>
       </section>
+
+      <!-- Date/Time Card -->
+      <div class="card mx-auto text-center" style="max-width: 420px">
+        <div class="card-body">
+          <h5 class="card-title mb-2">Current Date & Time</h5>
+          <p id="date" class="mb-1 text-muted"></p>
+          <p id="time" class="fs-2 fw-semibold"></p>
+          <p id="tz" class="small text-muted mb-0"></p>
+        </div>
+      </div>
 
       <!-- courses -->
       <section>
@@ -308,7 +311,10 @@
     </main>
 
     <footer class="bg-light d-lg-flex justify-content-between p-5">
-      <div>Copyright &copf; Coding Institute</div>
+      <div>
+        <p class="mb-2 mb-md-0 small">Copyright© Coding Institute</p>
+      </div>
+
       <div>
         <i class="bi bi-facebook"></i>
         <i class="bi bi-linkedin"></i>
@@ -323,6 +329,7 @@
     ></script>
     <!-- Course Data JS -->
     <script src="api/courses.js"></script>
+    <script src="js/main.js"></script>
 
     <script>
       // Function to show course details in modal
