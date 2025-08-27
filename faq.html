@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!-- navabr -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">CODING INSTITUTE</a>
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <h1 class="h3 mb-4">Frequently Asked Questions</h1>
+      <div class="list-group" id="faqList">
+        <div class="list-group-item faq-question rounded-3 shadow-sm mb-3">
+          <button
+            class="w-100 text-start border-0 bg-transparent py-3 fw-semibold faq-toggle"
+          >
+            1. What courses do you offer at your institute?
+          </button>
+          <div class="faq-answer collapse">
+            <p class="mb-0">
+              We offer beginner to advanced coding courses, including Web
+              Development, Python, JavaScript, Data Science, and Full-Stack
+              Development.
+            </p>
+          </div>
+        </div>
+
+        <div class="list-group-item faq-question rounded-3 shadow-sm mb-3">
+          <button
+            class="w-100 text-start border-0 bg-transparent py-3 fw-semibold faq-toggle"
+          >
+            2. Do I need prior programming knowledge to enroll?
+          </button>
+          <div class="faq-answer collapse">
+            <p class="mb-0">
+              No, many of our courses are designed for beginners. We also
+              provide foundational classes to help you get started.
+            </p>
+          </div>
+        </div>
+
+        <div class="list-group-item faq-question rounded-3 shadow-sm mb-3">
+          <button
+            class="w-100 text-start border-0 bg-transparent py-3 fw-semibold faq-toggle"
+          >
+            3. Will I receive a certificate after completing a course?
+          </button>
+          <div class="faq-answer collapse">
+            <p class="mb-0">
+              Yes, upon successfully completing any course, you will receive an
+              industry-recognized certificate.
+            </p>
+          </div>
+        </div>
+
+        <div class="list-group-item faq-question rounded-3 shadow-sm mb-3">
+          <button
+            class="w-100 text-start border-0 bg-transparent py-3 fw-semibold faq-toggle"
+          >
+            4. Do you provide job placement or internship opportunities?
+          </button>
+          <div class="faq-answer collapse">
+            <p class="mb-0">
+              Yes, we have partnerships with various companies and provide
+              assistance in job placements and internships.
+            </p>
+          </div>
+        </div>
+
+        <div class="list-group-item faq-question rounded-3 shadow-sm mb-3">
+          <button
+            class="w-100 text-start border-0 bg-transparent py-3 fw-semibold faq-toggle"
+          >
+            5. Can I learn online, or do I need to attend classes in person?
+          </button>
+          <div class="faq-answer collapse">
+            <p class="mb-0">
+              We offer both online and offline classes. You can choose the mode
+              of learning that best suits your schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-light d-flex justify-content-between p-5">
+      <div>Copyright &copf; Coding Institute</div>
+      <div>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-linkedin"></i>
+        <i class="bi bi-instagram"></i>
+      </div>
+    </footer>
+
+    <!-- js  -->
+    <script src="js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Course Data JS -->
+    <script src="api/courses.js"></script>
+
+    <script>
+      // Function to show course details in modal
+      function showDetails(courseKey) {
+        document.getElementById("courseTitle").innerHTML =
+          courseData[courseKey].title;
+        document.getElementById("courseDescription").innerHTML =
+          courseData[courseKey].description;
+
+        // Show modal
+        let myModal = new bootstrap.Modal(
+          document.getElementById("courseModal")
+        );
+        myModal.show();
+      }
+    </script>
+
+    <script>
+      // Set clicked image into modal
+      function setImage(img) {
+        document.getElementById("modalImage").src = img.src;
+      }
+    </script>
+  </body>
+</html>
